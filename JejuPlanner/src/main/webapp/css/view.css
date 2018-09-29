@@ -1,0 +1,208 @@
+
+
+.plan_page {
+    width: 1092px;
+    min-height: 500px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.plan_cover {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background-color: gray;
+}
+
+.puser_box {
+    position: absolute;
+    left: 25px;
+    top: 180px;
+    color: white;
+    z-index: 10;
+}
+
+.puser_name {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    float: left;
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+.cover_bottom {
+    width: 100%;
+    height: 204px;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    bottom: 0px;
+    padding-top: 90px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.cover_bleft {
+    float: left;
+    width: 520px;
+    height: 100%;
+}
+
+.plan_title {
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.plan_datetheme {
+    width: 100%;
+    padding-top: 8px;
+}
+
+.plan_date {
+    color: white;
+    font-size: 14px;
+    float: left;
+    line-height: 20px;
+}
+
+.plan_theme {
+    display: inline-block;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    color: white;
+    background: #636363;
+    float: left;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+element.style {
+    background: url(http://img.earthtory.com/img/plan_cover_img/38278_1428474001.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.cover_img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 350px;
+    z-index: 1;
+}
+
+.plan_mnu_box {
+    width: 100%;
+    height: 70px;
+    border-left: 1px solid #c8c8ca;
+    border-right: 1px solid #c8c8ca;
+    border-bottom: 1px solid #c8c8ca;
+    background: white;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.plan_mnu.on {
+    color: #49b2e9;
+}
+
+.plan_mnu {
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 18px;
+    color: #808080;
+    float: left;
+}
+
+.plan_mnu_line {
+    float: left;
+    width: 1px;
+    height: 24px;
+    background: #b3b3b3;
+    margin-top: 22px;
+}
+
+.page.show {
+    display: block;
+}
+.page {
+    margin-top: 30px;
+    padding-bottom: 60px;
+    display: none;
+}
+.wrap {
+    width: 1092px;
+    margin: 0 auto;
+    position: relative;
+}
+div, input, label, a, select, ul, li {
+    box-sizing: border-box;
+}
+
+.page_left, .page_left_cmt {
+    float: left;
+    width: 744px;
+    min-height: 500px;
+    padding-right: 25px;
+    margin-top: 30px;
+}
+
+.day_box {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.day_info_box {
+    width: 100%;
+    height: 60px;
+}
+
+.day_txt {
+    float: left;
+    background: #203341;
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    width: 110px;
+    text-align: center;
+}
+
+.day_info {
+    float: left;
+    width: 609px;
+    background: white;
+    border-top: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    height: 60px;
+}
+
+.day_info_left {
+    float: left;
+    width: 430px;
+    padding-left: 10px;
+}
+
+.date {
+    font-size: 12px;
+    color: #b3b3b3;
+    font-weight: bold;
+    padding-top: 13px;
+}
+
+.day_title {
+    color: #363636;
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 5px;
+}

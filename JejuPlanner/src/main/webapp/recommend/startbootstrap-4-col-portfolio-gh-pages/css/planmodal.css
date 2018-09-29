@@ -1,0 +1,260 @@
+@charset "UTF-8";
+input:focus{
+  outline: none;
+  }
+  textarea:focus{
+  outline: none;
+  }
+  select:focus{
+  outline: none;
+  }
+ .planday{
+
+  position: absolute;
+  height:600px;
+  width:700px;
+  border:none;
+  box-shadow:0px 0px 1px 3px white;
+  z-index:1200;
+  display: none;
+  background-color: white;
+  border-radius:10px;
+  margin: auto;
+  margin-top:100px;
+  opacity: 1;
+  text-align: center;
+  }
+  
+  .plandaybody{
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  width:600px;
+  height:700px;
+  display:none;
+  z-index:500;
+  opacity:0.8;
+  background-color: black;
+  position: absolute;
+  }
+  
+  .planday div:nth-child(1){
+  height:10%;
+  text-align: right;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  opacity: 0.8;
+  }
+   .planday div:nth-child(1) input{
+  background: white;
+  color: black;
+  font-weight: bold;
+  margin-top:8px;
+  margin-right:8px;
+  border-radius: 5px;
+  border-color: black;
+  height:30px;
+  width:30px;
+  text-align:center;
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  }
+  
+  .planday div:nth-child(1) input:hover{
+  cursor: pointer;
+  background-color:black;
+  color:white;
+  
+  }
+  
+  .planday div:nth-child(2){
+  height:10%;
+  text-align: left;
+  margin-top:10px;
+  }
+  
+  .planday div:nth-child(2) a{
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: serif;
+  }
+
+  .planday div:nth-child(2) input{
+  text-align: left;
+  padding-left:10px;
+  width:75%;
+  margin-left:20px;
+  height:50%;
+  border:2px solid gray; 
+  background-color:white;
+  border-radius: 4px;
+  margin-top: 10px;
+  }
+  
+
+  .planday div:nth-child(3){
+  height:10%;
+  text-align: left;
+  margin-top:15px;
+  }
+  
+    .planday div:nth-child(3) a{
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: serif;
+  }
+  
+  
+  .planday div:nth-child(3) label{
+  background-color: white;
+  color:black;
+  border:2px solid black;
+  border-radius:7px;
+  margin-left: 10px;
+  text-align: center;
+  padding-left: 7px;
+  padding-bottom: 0.5px;
+  line-height: 1;
+  }
+   
+  .planday div:nth-child(3) label:hover{
+  cursor: pointer;
+  }
+  
+  .planday div:nth-child(3) label span{
+  margin:auto;
+  font-weight: bold;
+  font-family: serif;
+  border:none;  
+  cursor: pointer;
+  
+ }
+  
+   .planday div:nth-child(3) input{
+   display:none;
+   width:80px;
+   height:80px;
+   
+  }
+  
+  .lastlabel{
+  padding-right:8px;
+  }
+  
+  .plancalendar{
+  height:10%;
+  text-align: left;
+
+  border:none;
+  
+  }
+   .plancalendar span:nth-child(1){
+   margin-left: 20px;
+   font-weight: bold;
+   font-family: serif;
+   }  
+   
+   .plancalendar input:nth-child(2){
+    height: 20px;
+    border-radius: 6px;
+    margin-left: 20px;
+   cursor: pointer;
+   text-align: center;
+   box-shadow: 1px 1px 5px grey;
+   }
+   .plancalendar span:nth-child(3){
+   font-size: 20px;
+   font-weight: bold;
+   }
+   .plancalendar input:nth-child(4){
+    height: 20px;
+    border-radius: 6px;
+    margin-left: 3px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 1px 1px 5px grey;
+   }
+   
+   .planpeople {
+   height:10%;
+   border: none;
+   text-align: left;
+   line-height: 2;
+   margin-top:5px;
+   }
+   .planpeople span:nth-child(1){
+   margin-left: 20px;
+   font-weight: bold;
+   font-family: serif;
+   }  
+   
+   .planpeople select{
+   width:110px;
+   height:26px;
+   margin-bottom: 10px;
+   margin-left : 20px;
+   padding-left: 10px;
+    font-size: 14px;
+    font-weight:bold;
+    color: black;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 6px;
+    -webkit-appearance: none; /* 화살표 없애기 for chrome*/
+   -moz-appearance: none;    /* 화살표 없애기 for firefox*/
+    appearance: none;         /* 화살표 없애기 공통*/
+   }
+   
+   .planpeople select::-ms-expand {
+   display: none;            /* 화살표 없애기 for IE10, 11*/
+}
+
+.planconsub{
+height:5%;
+text-align: left;
+font-weight: bold;
+font-family: serif;
+
+}
+.planconsub span{
+margin-left:20px;
+}
+
+.plancontent textarea{
+margin: 0px; width: 554px; height: 120px;
+margin-top:5px;
+resize: vertical;
+padding-top:5px;
+padding-left:10px;
+padding-right:10px;
+font-weight:800;
+font-size:15px;
+ box-shadow: 1px 1px 5px grey;
+ border-radius: 6px;
+}
+
+.clear{
+margin-top: 4px;
+
+}
+
+.clear input{
+width:200px;
+border-radius: 6px;
+ box-shadow: 1px 1px 5px grey;
+ font-size:14px;
+ font-weight: bold;
+ background: none;
+-webkit-transition-duration: 0.4s; /* Safari */
+ transition-duration: 0.4s;
+    
+}
+
+.clear input:hover{
+background-color:black;
+color:white;
+cursor: pointer;
+}

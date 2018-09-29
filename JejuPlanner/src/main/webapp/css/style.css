@@ -1,0 +1,138 @@
+/* clearfix */
+.clearfix:before, .clearfix:after{
+	content:"";, display: table;
+}
+.clearfix:after{
+	clear:both;
+}
+.clearfix{
+	*zoom:1;
+}
+
+/* Basic Styles */
+body{
+	margin: 0;
+	background-color: #ffffff;
+}
+nav{
+	height: 50px;
+	width: 100%;
+	background: white;
+	opacity:0.75;
+	font-size: 11pt;
+	font-family: 'PT Sans', Arial, Sans-serif;
+	font-weight: bold;
+	position: relative;
+
+	
+	text-align: right;
+	border:none;
+	border-bottom: solid 1px black;
+}
+nav ul{
+	margin-left:auto;
+	margin-top:0;
+	margin-bottom:0;
+	width: 100%;
+	height: 50px;
+    
+	
+	text-align: left;
+
+}
+nav li{
+	display: inline;
+	float: left;
+		width: 14%;
+}
+nav a{
+	color: #000000;
+	display: inline-block;
+	width:100%;
+	text-align: center;
+	text-decoration: none;
+	line-height: 50px;
+	font-weight: bold;
+}
+nav li a{
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+nav li:last-child a{
+	border-right: 0;
+    }
+nav a:hover, nav a:active{
+	color:#0080ff;
+	opacity: 1;
+
+	
+}
+nav li:hover, nav li:active{
+		
+	
+	
+}
+nav a#pull{
+	display: none;
+}
+
+
+
+/*Styles for screen 600px and lower*/
+@media only screen and (max-width : 700px) {
+	nav {
+		border-bottom: 0;
+		height: auto;
+	}
+	nav ul {
+	    width:100%;
+		display: none;
+		height: auto;
+	 
+		border:none;
+	}
+	nav a {
+	  	text-align: center;
+	  	width: 100%;
+	  	
+  	}
+	nav a#pull {
+		display: block;
+		
+		width: 100%;
+		position: relative;
+	}
+	nav a#pull:after {
+		content:"";
+		background: url('nav-icon.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+	
+		
+	}
+	nav li {
+	 
+		display: block;
+		float: none;
+		width: 90%;
+	}
+	nav li a {
+		border-bottom: 1px solid #576979;
+		text-align: left;
+		width:100%;
+	}
+	
+	nav li a input{
+	width:100%;
+	height: 100%;
+	border:none;
+	background:none;
+	}
+}
+
+
+

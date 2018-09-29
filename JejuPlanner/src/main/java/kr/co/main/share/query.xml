@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.main.share.WriteService">
+
+<!-- WriteDTO Mapping -->
+<resultMap type="kr.co.main.share.WriteDTO" id="WriteDTOResult">
+		<id column="sha_num" property="sha_num"/>
+		<result column="Plan_no" property="Plan_no"/>
+		<result column="sha_date" property="sha_date"/>
+		<result column="sha_viewcount" property="sha_viewcount"/>
+		<result column="sha_recommend" property="sha_recommend"/>	
+	<collection property="PlanDTO" ofType="kr.co.main.plan.PlanDTO">
+		<id column="plan_no" property="plan_no"/>
+		<result column="plan_sub" property="plan_sub"/>
+		<result column="plan_start" property="plan_start"/>
+		<result column="plan_end" property="plan_end"/>
+		<result column="plan_kind" property="plan_kind"/>
+		<result column="plan_des" property="plan_des"/>
+	</collection>
+</resultMap>
+
+<!-- PlanDTO Mapping -->
+<!-- <resultMap type="kr.co.main.plan.PlanDTO" id="PlanDTOResult">
+	<id column="plan_no" property="plan_no"/>
+	<result column="plan_sub" property="plan_sub"/>
+	<result column="plan_start" property="plan_start"/>
+	<result column="plan_end" property="plan_end"/>
+	<result column="plan_kind" property="plan_kind"/>
+	<result column="plan_des" property="plan_des"/>
+</resultMap> -->
+	
+	
+	
+<!-- 페이징 및 전체 레코드 갯수 조회 쿼리 -->
+	<select id="writeGetCount" resultType="int">
+		select count(*) from shareplan
+ 		<!-- select count(*) from shareplan where info = 0 --> <!-- 공지사항을 표시하려면  주석해제  --> 
+	</select>
+	
+	<!-- PlanDTO의 칼럼 select -->
+	<select id="getPlanDTOList" resultType="kr.co.main.plan.PlanDTO" parameterType="java.util.Map">
+		select *  FROM plan order by plan_no
+	</select> 
+	
+<!-- 게시글 목록을 조회하기 위한 쿼리(일반, 공지사항)-->
+	<select id="writeList" resultMap="WriteDTOResult" parameterType="java.util.Map">
+		SELECT sha_num, sha_date, sha_viewcount, sha_recommend, plan_sub, plan_start, plan_end, plan_kind, plan_des
+		FROM 
+			shareplan
+		JOIN 
+			plan
+		ON  shareplan.Plan_no = plan.plan_no
+		ORDER BY sha_num DESC LIMIT #{offset}, #{noOfRecords}  <!-- offset위치부터 noOfRecords 수 만큼 select 하라! -->
+		<!-- select * from shareplan where info = 0 ORDER BY idx DESC LIMIT #{offset}, #{noOfRecords} --> <!-- 공지사항을 표시하려며 주석 해제 -->
+	</select>
+	
+	<select id="writeInfoList" resultMap="WriteDTOResult">
+		select * from shareplan where info = 1 ORDER BY sha_num DESC
+	</select>	
+	
+	<!-- 상세보기 쿼리 -->
+    <select id="writeInfo" resultType="kr.co.main.share.WriteDTO" resultMap="WriteDTOResult" parameterType="int">
+        select * from shareplan where sha_num = #{sha_num}
+    </select>
+ 
+<!-- 조회수 증가 쿼리 -->
+    <update id="hitPost" parameterType="int">
+        update shareplan set sha_viewcount = sha_viewcount+1 where sha_num = #{sha_num}
+    </update>
+ 
+<!-- 이전글 다음글 표시 -->
+    <select id="PNwriteList" resultType="kr.co.main.share.WriteDTO" resultMap="WriteDTOResult" parameterType="int">
+        select * from shareplan where sha_num = #{sha_num}
+        UNION ALL(select * from shareplan where <![CDATA[sha_num < #{sha_num}]]> ORDER BY sha_num DESC LIMIT 1)
+        UNION ALL(select * from shareplan where <![CDATA[sha_num > #{sha_num}]]> ORDER BY sha_num ASC LIMIT 1)
+        ORDER BY sha_num DESC
+    </select>
+
+	
+ 	
+</mapper>

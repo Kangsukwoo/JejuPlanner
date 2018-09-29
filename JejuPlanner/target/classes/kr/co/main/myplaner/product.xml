@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.main.myplaner.PlanerMapper">
+  <select id="list" resultType="PlanerDTO">
+    SELECT contentid, title, image,addr2, mapx, mapy, contenttypeid,modifiedtime
+    FROM product
+  </select>
+  
+  <insert id="create" parameterType="PlanerDTO" >
+    INSERT INTO product(contentid, title, image, cat1, cat2, cat3, addr1, addr2, mapx, mapy, sigungucode, contenttypeid, modifiedtime)
+    values (#{contentid}, #{title}, #{image}, #{cat1}, #{cat2}, #{cat3}, #{addr1}, #{addr2}, #{mapx}, #{mapy}, #{sigungucode}, #{contenttypeid}, now() )     
+    
+  </insert>
+</mapper>
+
